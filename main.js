@@ -4,12 +4,13 @@ function main(){
 
     var vertexShaderSource = `
     void main() {
-
+        gl_PointSize = 100.0;
+        gl_Position = vec4(0.0, 0.0, 0.0, 1.0);
     }`;
 
     var fragmentShaderSource = `
     void main() {
-
+        gl_FragColor = vec4(0.0, 1.0, 0.0, 1.0);
     }`;
 
     // Buat .c di GPU
@@ -37,4 +38,6 @@ function main(){
 
     gl.clearColor(0.0, 0.0, 0.0, 1.0);
     gl.clear(gl.COLOR_BUFFER_BIT);
+    
+    gl.drawArrays(gl.POINTS, 0, 1);
 }

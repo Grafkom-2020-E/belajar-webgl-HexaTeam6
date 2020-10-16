@@ -64,6 +64,6 @@ function main(){
     
     var primitive = gl.LINE_LOOP;
     var offset = 0;
-    var nVertex = 4;
+    var nVertex = 3;
     gl.drawArrays(primitive, offset, nVertex);
 }

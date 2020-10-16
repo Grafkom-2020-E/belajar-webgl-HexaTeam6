@@ -10,10 +10,10 @@ function main(){
      * Titik D (-0.5, 0.5)
      */
     var vertices = [
-        -0.5, -0.5, //Titik A
         0.5, -0.5, //Titik B
+        -0.5, -0.5, //Titik A
         0.5, 0.5, //Titik C
-        -0.5, 0.5 //Titik C
+        -0.5, 0.5, //Titik A
     ];
 
     var vertexBuffer = gl.createBuffer();
@@ -63,8 +63,9 @@ function main(){
 
     gl.clearColor(0.0, 0.0, 0.0, 1.0);
     gl.clear(gl.COLOR_BUFFER_BIT);
+    gl.viewport(100, 0, 600, 600);
     
-    var primitive = gl.TRIANGLE_FAN;
+    var primitive = gl.TRIANGLE_STRIP;
     var offset = 0;
     var nVertex = 4;
     gl.drawArrays(primitive, offset, nVertex);

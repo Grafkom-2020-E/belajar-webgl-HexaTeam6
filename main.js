@@ -65,6 +65,6 @@ function main(){
     
     var primitive = gl.LINE_STRIP;
     var offset = 0;
-    var nVertex = 6;
+    var nVertex = 4;
     gl.drawArrays(primitive, offset, nVertex);
 }

@@ -87,8 +87,17 @@ function main(){
     function onMouseClick(event){
       freeze = !freeze;
     }
-
     document.addEventListener('click', onMouseClick);
+
+    function onKeyUp(event){
+      if(event.keyCode == 32) freeze = true;
+    }
+
+    function onKeyDown(event){
+      if(event.keyCode == 32) freeze = false;
+    }
+    document.addEventListener('keydown', onKeyDown);
+    document.addEventListener('keyup', onKeyUp);
 
     function render() {
       if(!freeze){

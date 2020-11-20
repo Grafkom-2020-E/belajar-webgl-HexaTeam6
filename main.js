@@ -99,7 +99,17 @@ function main(){
     document.addEventListener('keydown', onKeyDown);
     document.addEventListener('keyup', onKeyUp);
 
+    var u_Model = gl.getUniformLocation(shaderProgram, 'u_Model');
+    var u_View = gl.getUniformLocation(shaderProgram, 'u_View');
+    var u_Porjection = gl.getUniformLocation(shaderProgram, 'u_Projection');
+    var model = glMatrix.mat4.create();
+    var view = glMatrix.mat4.create();
+    var projection = glMatrix.mat4.create();
+    gl.uniformMatrix4fv(u_Porjection, false, projection);
+
     function render() {
+      gl.uniformMatrix4fv(u_Model, false, model);
+      gl.uniformMatrix4fv(u_View, false, view);
       if(!freeze){
         d[0] -= 0.001;
         d[1] -= 0.001;
